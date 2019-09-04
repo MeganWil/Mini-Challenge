@@ -76,6 +76,6 @@ let gradeSum = students.reduce(0){
 }
 
 let gradeAve = gradeSum / students.count
-print("\(gradeAve)")
+print("Average grade: \(gradeAve)")
 
 
