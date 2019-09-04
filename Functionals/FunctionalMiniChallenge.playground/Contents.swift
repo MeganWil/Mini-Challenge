@@ -22,6 +22,8 @@ struct Student {
     }
 }
 
+
+
 var students: [Student] = [
     Student(firstName: "Sterling", lastName: "Archer"),
     Student(firstName: "Lana", lastName: "Kane"),
@@ -41,13 +43,39 @@ var students: [Student] = [
 ]
 
 // TODO: - Create an array that contains only the freshmen from the student array using the filter function
+let freshmenyear = students.filter{
+    (students) in
+    return students.year == StudentYear.freshman
+}
 
+for students in freshmenyear{
+    print("\(students.firstName) is a \(students.year)")
+}
 
+print(" ")
 
 // TODO: - Create an array that contains only the full names (first name concatenated with the last name) from the student array using the map function
 
+let studentName = students.map{
+    (students) in
+    return students.firstName + " " +  students.lastName
+}
+
+for studentN in studentName {
+    print("\(studentN)")
+}
+
+print(" ")
 
 
 // TODO: - Return the average grade from all the students using the reduce function divided by the count
+
+let gradeSum = students.reduce(0){
+    (finalResult, students) in
+    return finalResult + students.grade
+}
+
+let gradeAve = gradeSum / students.count
+print("\(gradeAve)")
 
 
